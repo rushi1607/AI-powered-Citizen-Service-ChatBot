@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmartGov AI | Citizen Services</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">S</span><span>SmartGov <b>AI</b><small>Citizen Services Portal</small></span></a>
+  <nav><a href="#assistant">Assistant</a><a href="#schemes">Schemes</a><a href="#tracker">Track</a><a href="#grievances">Grievances</a><a href="#dashboard">Dashboard</a></nav>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">SMARTER SERVICES · BETTER GOVERNANCE</p>
+      <h1>Government services,<br><span>made simpler.</span></h1>
+      <p>Find public-service information, explore schemes, track demo applications, and submit a grievance in one place.</p>
+      <a class="button primary" href="#services">Explore services</a>
+      <p class="disclaimer">Prototype for demonstration only. Not an official government portal.</p>
+    </div>
+    <div class="hero-panel">
+      <div class="panel-top"><span class="status-dot"></span> Service overview <span class="live-tag">DEMO DATA</span></div>
+      <div class="hero-stat"><strong>05</strong><span>connected service modules</span></div>
+      <div class="mini-row"><span>Citizen Assistant</span><b>Available</b></div>
+      <div class="mini-row"><span>Scheme Finder</span><b>Available</b></div>
+      <div class="mini-row"><span>Application Tracker</span><b>Sample records</b></div>
+      <div class="mini-row"><span>Grievance Management</span><b>Local tickets</b></div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="section-heading"><div><p class="eyebrow">ONE PORTAL, FIVE TOOLS</p><h2>Citizen service centre</h2></div><p>Choose a module to get started.</p></div>
+    <div class="service-grid">
+      <a class="service-card" href="#assistant"><span class="service-icon">✦</span><h3>AI Citizen Assistant</h3><p>Find guidance and official resources.</p><span class="card-link">Ask a question →</span></a>
+      <a class="service-card" href="#schemes"><span class="service-icon">⌕</span><h3>Scheme Finder</h3><p>Search official scheme links across banking, insurance, housing, livelihoods and entrepreneurship.</p><span class="card-link">Find schemes →</span></a>
+      <a class="service-card" href="#tracker"><span class="service-icon">↗</span><h3>Application Tracker</h3><p>Check fictional reference records.</p><span class="card-link">Track application →</span></a>
+      <a class="service-card" href="#grievances"><span class="service-icon">≋</span><h3>Grievance Management</h3><p>Create and follow local demo tickets.</p><span class="card-link">Submit grievance →</span></a>
+      <a class="service-card" href="#dashboard"><span class="service-icon">▦</span><h3>Governance Dashboard</h3><p>View prototype data and ticket status.</p><span class="card-link">View dashboard →</span></a>
+    </div>
+  </section>
+
+  <section id="assistant" class="section split-section">
+    <div class="section-intro"><p class="eyebrow">01 / CITIZEN SUPPORT</p><h2>AI Citizen Assistant</h2><p>Ask about common public services. Responses use curated keyword-matched FAQs.</p></div>
+    <div class="module-card">
+      <label for="assistant-language">Response language</label>
+      <select id="assistant-language"><option>English</option><option>Hindi</option><option>Marathi</option></select>
+      <label for="assistant-question">Your question</label>
+      <textarea id="assistant-question" rows="3" placeholder="e.g. Where can I find scholarship information?"></textarea>
+      <button class="button primary" id="assistant-submit">Ask assistant</button>
+      <div id="assistant-result" class="result hidden" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="schemes" class="section split-section">
+    <div class="section-intro"><p class="eyebrow">02 / DISCOVER SUPPORT</p><h2>Personalized Scheme Finder</h2><p>Explore verified government scheme portals by keyword or beneficiary group. Links open the official site for current rules and applications.</p></div>
+    <div class="module-card">
+      <label for="scheme-audience">I am looking for</label>
+      <select id="scheme-audience"><option value="citizen">Any citizen</option><option value="student">Student</option><option value="farmer">Farmer</option><option value="worker">Unorganised worker</option><option value="business">Entrepreneur / vendor</option><option value="all">All audiences</option></select>
+      <label for="scheme-query">Keyword</label>
+      <input id="scheme-query" placeholder="PMJDY, housing, crop insurance, pension, startup...">
+      <button class="button primary" id="scheme-submit">Search schemes</button>
+      <div id="scheme-results" class="stack-results"></div>
+    </div>
+  </section>
+
+  <section id="tracker" class="section split-section">
+    <div class="section-intro"><p class="eyebrow">03 / APPLICATION STATUS</p><h2>Smart Application Tracker</h2><p>Use a sample reference such as <code>SG-1001</code>, <code>SG-1002</code>, or <code>SG-1003</code>.</p></div>
+    <div class="module-card">
+      <label for="application-id">Application reference number</label>
+      <div class="inline-form"><input id="application-id" placeholder="SG-1001"><button class="button primary" id="tracker-submit">Track</button></div>
+      <div id="tracker-result" class="result hidden" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="grievances" class="section split-section">
+    <div class="section-intro"><p class="eyebrow">04 / CITIZEN FEEDBACK</p><h2>Grievance Management</h2><p>Submit a demo complaint. The prototype categorizes it and creates a local ticket; it does not send it to a government office.</p></div>
+    <div class="module-card">
+      <label for="citizen-name">Name (optional)</label><input id="citizen-name" placeholder="Demo Citizen">
+      <label for="locality">Locality (optional)</label><input id="locality" placeholder="Area or locality">
+      <label for="grievance-description">Describe the issue</label><textarea id="grievance-description" rows="4" placeholder="e.g. Water is leaking from the pipeline near my street."></textarea>
+      <button class="button primary" id="grievance-submit">Submit demo grievance</button>
+      <div id="grievance-result" class="result hidden" aria-live="polite"></div>
+      <div class="list-heading"><h3>Recent tickets</h3><button class="button secondary small" id="refresh-grievances">Refresh</button></div>
+      <div id="grievance-list" class="stack-results"></div>
+    </div>
+  </section>
+
+  <section id="dashboard" class="section">
+    <div class="section-heading"><div><p class="eyebrow">05 / SERVICE INSIGHTS</p><h2>Smart Governance Dashboard</h2></div><button class="button secondary" id="refresh-dashboard">Refresh dashboard</button></div>
+    <p class="disclaimer">Statistics below are calculated from local demo records only.</p>
+    <div id="dashboard-kpis" class="kpi-grid"></div>
+    <div class="dashboard-grid">
+      <div class="module-card"><h3>Application statuses</h3><div id="application-status-chart" class="simple-chart"></div></div>
+      <div class="module-card"><h3>Grievance categories</h3><div id="grievance-category-chart" class="simple-chart"></div></div>
+    </div>
+    <div class="module-card table-card"><h3>Recent grievance tickets</h3><div class="table-wrap"><table><thead><tr><th>Ticket</th><th>Category</th><th>Priority</th><th>Status</th><th>Update status</th></tr></thead><tbody id="dashboard-tickets"></tbody></table></div></div>
+  </section>
+</main>
+<footer><strong>SmartGov AI</strong><span>Educational prototype · Verify services through official government sources.</span></footer>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
